@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
 
   return (
     <>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <Refine
@@ -48,6 +47,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout): JSX.Element {
               syncWithLocation: true,
               warnWhenUnsavedChanges: true,
             }}
+            resources={[{ name: "posts", list: "/posts" }]}
           >
             {renderComponent()}
             <RefineKbar />
